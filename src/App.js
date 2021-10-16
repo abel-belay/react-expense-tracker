@@ -1,5 +1,6 @@
 import "./App.css";
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
   const expenses = [
@@ -27,10 +28,15 @@ const App = () => {
       title: "New Desk (Wooden)",
       amount: 450,
       date: new Date(2021, 5, 12),
-    }
+    },
   ];
 
-  return <Expenses expenses={expenses}></Expenses>;
-}
+  return (
+    <div>
+      <NewExpense />
+      <Expenses expenses={expenses}></Expenses>
+    </div>
+  );
+};
 
 export default App;
