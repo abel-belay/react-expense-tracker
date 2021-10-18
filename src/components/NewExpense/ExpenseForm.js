@@ -1,17 +1,16 @@
 import "./ExpenseForm.css";
-import { useState } from "react";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    const expenseData = {
+    const newExpense = {
       title: event.target.title.value,
       amount: event.target.amount.value,
       date: new Date(event.target.date.value),
     };
 
-    console.log(expenseData);
+    props.onNewExpense(newExpense);
 
     for (let element of event.target.elements) {
       element.value = "";
