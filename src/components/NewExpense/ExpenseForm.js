@@ -6,7 +6,7 @@ const ExpenseForm = (props) => {
 
     const newExpense = {
       title: event.target.title.value,
-      amount: event.target.amount.value,
+      amount: +event.target.amount.value,
       date: new Date(event.target.date.value),
     };
 

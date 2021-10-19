@@ -11,7 +11,7 @@ const ExpensesList = (props) => {
   if (expenseComponents.length) {
     return <ul className="expenses-list">{expenseComponents}</ul>;
   } else {
-    return <p className="expenses-list__fallback">No Components Found</p>;
+    return <p className="expenses-list__fallback">No Expenses Found</p>;
   }
 };
 

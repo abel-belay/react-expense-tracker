@@ -14,7 +14,8 @@ const expensesSeed = [
     id: "e2",
     title: "New TV",
     amount: 799.49,
-    date: new Date(2021, 2, 12) },
+    date: new Date(2021, 2, 12),
+  },
   {
     id: "e3",
     title: "Car Insurance",
@@ -32,14 +33,14 @@ const expensesSeed = [
 const App = () => {
   const [expenses, setExpenses] = useState(expensesSeed);
   const newExpenseHandler = (newExpense) => {
-    newExpense.id = 2;
+    newExpense.id = Math.random().toString();
     setExpenses((oldExpenses) => [newExpense, ...oldExpenses]);
   };
 
   return (
     <div>
       <NewExpense onNewExpense={newExpenseHandler} />
-      <Expenses expenses={expenses}></Expenses>
+      <Expenses expenses={expenses} />
     </div>
   );
 };
